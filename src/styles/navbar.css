@@ -1,0 +1,52 @@
+/* Barra fija arriba con blur y borde inferior */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  width: 100%;
+  height: var(--nav-h, 72px);
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e5e7eb; /* slate-200 */
+}
+
+/* Contenedor centrado */
+.navbar__container {
+  max-width: 1152px;       /* ~max-w-6xl */
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 1rem;         /* px-4 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Links: ocultos en móvil, visibles desde md */
+.navbar__links {
+  display: none;
+  align-items: center;
+  gap: 4.5rem;             /* gap-6 */
+  font-size: 0.95rem;      /* text-sm */
+}
+
+@media (min-width: 768px) {
+  .navbar__links { display: flex; }
+}
+
+/* Estilo de cada link */
+.navbar__link {
+  color: #0f172a;          /* slate-900 */
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.navbar__link:hover {
+  color: #f7a311;          /* blue-700 */
+}
+
+/* Espaciador opcional para mantener el layout si no hay ítems a la derecha */
+.navbar__spacer {
+  width: 1px;
+  height: 1px;
+}

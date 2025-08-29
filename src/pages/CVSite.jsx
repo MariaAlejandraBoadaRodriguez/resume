@@ -1,8 +1,11 @@
 // src/pages/CVSite.jsx
 import React from "react";
 import NavBar from "../components/layout/NavBar";
-import Hero from "../components/sections/Hero";
-import Skills from "../components/sections/Skills";
+//import Hero from "../components/sections/Hero";
+import LandingHero from "../components/sections/LandingHero";
+//import Skills from "../components/sections/Skills";
+//import AboutSkills from "../components/sections/AboutSkills";
+import RadialAboutSkills from "../components/sections/RadialAboutSkills";
 import Projects from "../components/sections/Projects";
 import Education from "../components/sections/Education";
 import Certifications from "../components/sections/Certifications";
@@ -14,8 +17,8 @@ export default function CVSite() {
   return (
     <div className="min-h-screen w-full scroll-smooth bg-gradient-to-b from-slate-50 to-white text-slate-900">
       <NavBar />
-      <Hero />
-      <Skills />
+      <LandingHero />
+      <RadialAboutSkills />
       <Projects />
       <Education />
       <Certifications />

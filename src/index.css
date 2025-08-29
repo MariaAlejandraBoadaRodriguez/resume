@@ -1,3 +1,16 @@
-/* src/index.css */
+/* Reset básico */
 * { box-sizing: border-box; }
 html, body, #root { height: 100%; margin: 0; }
+
+:root { --nav-h: 73px; }           /* altura por defecto */
+section[id] { scroll-margin-top: calc(var(--nav-h) + 12px); }
+
+/* Altura mínima del body (corrige en móviles con barras) */
+body {
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* (Opcional) Suavizar scroll a secciones #ancla */
+html { scroll-behavior: smooth; }

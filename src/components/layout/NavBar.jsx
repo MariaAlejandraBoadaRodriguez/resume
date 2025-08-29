@@ -1,22 +1,23 @@
 import React from "react";
-import { WHATSAPP_URL } from "../../constants";
+import "../../styles/navbar.css"; // <- importa el CSS separado
 
 export default function NavBar() {
-    return (
-        <header className="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur">
-            <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-                <a href="#inicio" className="font-bold text-xl md:text-2xl tracking-tight">María Alejandra Boada Rodriguez</a>
-                <nav className="hidden md:flex items-center gap-6 text-sm">
-                    <a href="#sobre-mi" className="hover:text-blue-700">Sobre mí</a>
-                    <a href="#habilidades" className="hover:text-blue-700">Habilidades</a>
-                    <a href="#proyectos" className="hover:text-blue-700">Proyectos</a>
-                    <a href="#educacion" className="hover:text-blue-700">Educación</a>
-                    <a href="#certificaciones" className="hover:text-blue-700">Certificaciones</a>
-                    <a href="#contacto" className="hover:text-blue-700">Contacto</a>
-                </nav>            
-                <div className="flex items-center gap-3">
-                </div>
-            </div>
-        </header>
-    );
+  return (
+    // Puedes ajustar la altura del header cambiando --nav-h
+    <header className="navbar" style={{ "--nav-h": "72px" }}>
+      <div className="navbar__container">
+        <nav className="navbar__links" aria-label="Secciones del sitio">
+          <a href="#home" className="navbar__link">Inicio</a>
+          <a href="#habilidades" className="navbar__link">Sobre mí</a>
+          <a href="#proyectos" className="navbar__link">Proyectos</a>
+          <a href="#educacion" className="navbar__link">Educación</a>
+          <a href="#certificaciones" className="navbar__link">Certificaciones</a>
+          <a href="#contacto" className="navbar__link">Contacto</a>
+        </nav>
+
+        {/* Espaciador opcional para mantener justify-between si luego agregas algo a la derecha */}
+        <div className="navbar__spacer" />
+      </div>
+    </header>
+  );
 }
