@@ -1,6 +1,7 @@
 import React from "react";
 import { WHATSAPP_URL } from "../../constants";
 import foto from "../../images/foto.png";
+import cvPdf from "../../pdf/cv.pdf"; 
 import "../../styles/landing-hero.css"; // importa los estilos de esta sección
 
 export default function LandingHero() {
@@ -67,6 +68,21 @@ export default function LandingHero() {
                 <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.1-.75.08-.74.08-.74 1.21.09 1.85 1.24 1.85 1.24 1.08 1.85 2.83 1.32 3.52 1.01.11-.8.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.9 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.45 11.45 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.17.78.84 1.24 1.9 1.24 3.22 0 4.58-2.8 5.6-5.47 5.89.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.82.58A12 12 0 0 0 12 .5z"/>
               </svg>
             </a>
+
+             {/* CV (PDF) */}
+            <a
+              className="social-btn"
+              href={cvPdf}
+              download="CV_Maria_Alejandra_Boada_Rodriguez.pdf"
+              aria-label="Descargar CV en PDF"
+              title="Descargar CV (PDF)"
+            >
+              {/* icono de descarga */}
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v8.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42L11 12.59V4a1 1 0 0 1 1-1zm-7 14a1 1 0 0 0 0 2h14a1 1 0 1 0 0-2H5z"/>
+              </svg>
+            </a> 
+
           </div>
         </div>
 

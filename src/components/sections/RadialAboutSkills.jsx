@@ -2,24 +2,48 @@
 import React from "react";
 import "../../styles/radial-about-skills.css";
 
-const SKILL_BARS = [
+/* =========================
+   Datos por grupo de skills
+   ========================= */
+const LANGUAGES = [
   { label: "Python", percent: 90 },
   { label: "Qiskit", percent: 75 },
   { label: "PennyLane", percent: 70 },
+];
+
+const FRAMEWORKS_DB = [
   { label: "React", percent: 80 },
   { label: "Spring Boot", percent: 60 },
   { label: "Node.js", percent: 70 },
   { label: "PostgreSQL", percent: 75 },
-  { label: "Git", percent: 90 },
   { label: "MySQL", percent: 80 },
-  { label: "Scrum", percent: 85 },
-  { label: "Jira", percent: 75 },
 ];
+
+const TOOLS = [
+  { label: "Git", percent: 90 },
+  { label: "Jira", percent: 75 },
+  { label: "Scrum", percent: 85 },
+];
+
+/* Barrita reutilizable */
+function SkillBar({ label, percent, variant = "yellow" }) {
+  return (
+    <div className={`skillbar skillbar--${variant}`}>
+      <div className="skillbar__head">
+        <span className="skillbar__label">{label}</span>
+        <span className="skillbar__percent">{percent}%</span>
+      </div>
+      <div className="skillbar__track">
+        <div className="skillbar__fill" style={{ width: `${percent}%` }} />
+      </div>
+    </div>
+  );
+}
 
 export default function RadialAboutSkills() {
   return (
     <section id="sobre-mi" className="radial">
-      {/* ancla extra para el menú */}
+      {/* ancla adicional para el menú */}
       <div id="habilidades" className="radial__anchor" aria-hidden="true" />
 
       <div className="radial__container">
@@ -42,26 +66,34 @@ export default function RadialAboutSkills() {
           </div>
         </div>
 
-        {/* DERECHA: barras de skills */}
+        {/* DERECHA: Skill Set agrupado */}
         <div className="radial__right">
           <div className="skillbars">
             <h3 className="skillbars__title">Skill Set</h3>
 
-            <div className="skillbars__grid">
-              {SKILL_BARS.map((s) => (
-                <div key={s.label} className="skillbar">
-                  <div className="skillbar__head">
-                    <span className="skillbar__label">{s.label}</span>
-                    <span className="skillbar__percent">{s.percent}%</span>
-                  </div>
+            {/* Lenguajes (amarillo) */}
+            <div className="skillbars__group">
+              <h4 className="skillbars__groupTitle">Lenguajes</h4>
+              {LANGUAGES.map((s) => (
+                <SkillBar key={s.label} {...s} variant="yellow" />
+              ))}
+            </div>
 
-                  <div className="skillbar__track">
-                    <div
-                      className="skillbar__fill"
-                      style={{ width: `${s.percent}%` }}
-                    />
-                  </div>
-                </div>
+            {/* Frameworks y BD (negro) */}
+            <div className="skillbars__group">
+              <h4 className="skillbars__groupTitle">
+                Frameworks y Base de Datos
+              </h4>
+              {FRAMEWORKS_DB.map((s) => (
+                <SkillBar key={s.label} {...s} variant="black" />
+              ))}
+            </div>
+
+            {/* Herramientas (amarillo) */}
+            <div className="skillbars__group">
+              <h4 className="skillbars__groupTitle">Herramientas</h4>
+              {TOOLS.map((s) => (
+                <SkillBar key={s.label} {...s} variant="yellow" />
               ))}
             </div>
           </div>

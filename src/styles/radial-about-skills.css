@@ -1,77 +1,101 @@
-/* Sección a pantalla completa (restando el alto del navbar) */
-.radial {
+/* src/styles/radial-about-skills.css */
+
+/* Paleta */
+:root{
+  --text: #0f172a;
+  --muted: #475569;
+  --track: #e5e7eb;
+  --yellow: #f59e0b;
+  --black: #0b1220;
+}
+
+/* ===== Sección: ocupa viewport y centra vertical ===== */
+.radial{
+  color: var(--text);
+
+  /* Ocupa el alto de la pantalla (restando el navbar) para que no asome el título siguiente */
   min-block-size: calc(100svh - var(--nav-h, 72px));
+  /* Fallback por si algún navegador no soporta svh */
+  /* min-block-size: calc(100vh - var(--nav-h, 72px)); */
+
+  /* Centra verticalmente el contenido de la sección */
   display: grid;
   align-items: center;
-  padding: clamp(16px, 3vw, 32px);
-  color: #0f172a;
+
+  /* Espacio superior/inferior para que respire */
+  padding-block: clamp(32px, 6vh, 64px);
+  padding-inline: 16px;
+
   background:
     radial-gradient(circle at 25% 12%, rgba(2,132,199,.04), transparent 40%),
-    radial-gradient(circle at 90% 88%, rgba(16,185,129,.04), transparent 45%),
-    radial-gradient(#eef2f7 1px, transparent 1px);
+    radial-gradient(circle at 90% 88%, rgba(16,185,129,.04), transparent 45%);
   background-size: auto, auto, 24px 24px;
 }
-@supports not (height: 100svh) {
-  .radial { min-block-size: calc(100vh - var(--nav-h, 72px)); }
-}
 
-/* Permite que los enlaces #sección no queden tapados por el navbar */
-.radial__anchor { scroll-margin-top: calc(var(--nav-h, 72px) + 12px); }
+/* Ancla para el scroll desde el menú */
+.radial__anchor{ scroll-margin-top: calc(var(--nav-h,72px) + 12px); }
 
-/* Grid 2 columnas: texto izquierda, skills derecha */
-.radial__container {
+/* ===== Layout 2 columnas ===== */
+.radial__container{
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: clamp(1rem, 4vw, 3rem);
+  grid-template-columns: minmax(440px, 1fr) minmax(520px, 1fr);
+  gap: clamp(1.25rem, 4vw, 3rem);
+
+  /* Centra verticalmente las dos columnas */
   align-items: center;
 }
 
-/* IZQUIERDA: bloque de texto */
-.about {
-  max-width: 640px;
+/* IZQUIERDA: centrado vertical del bloque de texto */
+.radial__left{
+  align-self: center;              /* por si algún navegador ignora align-items del container */
+  display: grid;
+  place-items: start;              /* texto alineado a la izquierda, bloque centrado vertical */
 }
-.about__p {
-  font-size: clamp(16px, 1.15vw, 18px);
-  line-height: 1.65;
-  margin: 0;
-}
-.about__p strong { color: #0f172a; font-weight: 800; } 
 
-/* DERECHA: barras */
-.skillbars { width: min(520px, 95%); }
-.skillbars__title {
-  font: 800 clamp(18px, 2.6vw, 22px)/1.2 system-ui, sans-serif;
+.about{ max-width: 58ch; }
+.about__p{ margin: 0; line-height: 1.7; }
+
+/* DERECHA */
+.radial__right{ display: grid; place-items: start end; }
+.skillbars{ width: min(560px, 100%); }
+.skillbars__title{
   margin: 0 0 .75rem;
+  font-weight: 800;
+  font-size: clamp(18px, 2.2vw, 22px);
 }
-.skillbars__grid { display: grid; gap: .75rem; }
 
-.skillbar__head {
+/* Agrupaciones */
+.skillbars__group{ margin-top: 1rem; }
+.skillbars__groupTitle{
+  margin: .25rem 0 .5rem;
+  font-weight: 800;
+  color: var(--muted);
+  letter-spacing: .2px;
+}
+
+/* Barra */
+.skillbar{ margin-bottom: .75rem; }
+.skillbar__head{
   display: flex; align-items: center; gap: .6rem;
 }
-.skillbar__icon {
-  inline-size: 28px; block-size: 28px; border-radius: 50%;
-  display: grid; place-items: center;
-  background: #0b1220; color: #fff; font: 800 12px/1 system-ui, sans-serif;
-}
-.skillbar__label { font-weight: 700; color: #0f172a; }
-.skillbar__percent { margin-left: auto; color: #64748b; font-weight: 700; }
+.skillbar__label{ font-weight: 700; }
+.skillbar__percent{ margin-left: auto; color: var(--muted); font-weight: 700; }
 
-.skillbar__track {
+.skillbar__track{
   margin-top: .25rem; height: 10px; border-radius: 9999px;
-  background: #e2e8f0; overflow: hidden;
+  background: var(--track); overflow: hidden;
 }
-.skillbar__fill {
-  height: 100%; background: #f59e0b; border-radius: 9999px;
-}
+.skillbar__fill{ height: 100%; border-radius: 9999px; }
 
-/* Responsive: en móviles apila (texto arriba, skills abajo) */
-@media (max-width: 980px) {
-  .radial__container {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: left;
-  }
-  .about, .skillbars { width: 100%; max-width: 700px; }
+/* Variantes de color */
+.skillbar--yellow .skillbar__fill{ background: var(--yellow); }
+.skillbar--black  .skillbar__fill{ background: var(--black); }
+
+/* Responsive */
+@media (max-width: 1024px){
+  .radial__container{ grid-template-columns: 1fr; }
+  .radial__right{ place-items: start stretch; }
+  .skillbars{ width: 100%; }
 }
