@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function LinkBadge({ href, children, className = "" }) {
+  
   return (
     <a
       href={href}
