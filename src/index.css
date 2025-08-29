@@ -1,8 +1,13 @@
-/* Reset básico */
+/* Reset básico (lo de arriba lo dejas igual) */
 * { box-sizing: border-box; }
 html, body, #root { height: 100%; margin: 0; }
 
-:root { --nav-h: 73px; }           /* altura por defecto */
+:root { --nav-h: 73px; }                  /* altura del navbar (desktop) */
+@media (max-width: 768px) {
+  :root { --nav-h: 64px; }                /* altura estimada en móvil */
+}
+
+/* Cuando haces click en #ancla, que no lo tape el navbar */
 section[id] { scroll-margin-top: calc(var(--nav-h) + 12px); }
 
 /* Altura mínima del body (corrige en móviles con barras) */
@@ -12,5 +17,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* (Opcional) Suavizar scroll a secciones #ancla */
+/* Suavizar scroll a anclas */
 html { scroll-behavior: smooth; }
+
+/* CONTENEDOR que activa el "page snap" */
+.page--snap {
+  scroll-snap-type: y mandatory;          /* o 'proximity' si quieres menos estricto */
+  overscroll-behavior-y: contain;         /* evita rebotes raros */
+}
+
+/* CADA SECCIÓN: ocupa el alto visible bajo el navbar y “encaja” al inicio */
+.section {
+  min-height: calc(100dvh - var(--nav-h));
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* (Opcional) Para centrar verticalmente el contenido de alguna sección */
+.section--center {
+  display: grid;
+  align-content: center;                   /* o place-items:center para centrar todo */
+  min-height: calc(100dvh - var(--nav-h));
+}

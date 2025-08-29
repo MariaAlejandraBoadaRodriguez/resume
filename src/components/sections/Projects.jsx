@@ -1,42 +1,76 @@
 import React from "react";
 import Section from "../ui/Section";
-import Card from "../ui/Card";
-import LinkBadge from "../ui/LinkBadge";
+import "../../styles/projects.css";
 
+import quboImg from "../../images/QUBO.png";
+import teleImg from "../../images/Teleporta.png";
+
+const projects = [
+  {
+    title: "Quantum Portfolio Optimization",
+    tag: "QUBO",
+    image: quboImg,
+    desc:
+      "Plataforma de optimización de cartera con formulación QUBO para balancear retorno-riesgo. Preselección por Sharpe, alto retorno, baja volatilidad/correlación. Solver de recocido simulado e integración cuántica (PennyLane/QAOA).",
+    demo: "https://investmen-portafolio.vercel.app/",
+    code: "https://github.com/MariaAlejandraBoadaRodriguez/investmen-portafolio",
+  },
+  {
+    title: "Teleportation",
+    tag: "VQA",
+    image: teleImg,
+    desc:
+      "Plataforma web para simular teletransportación cuántica: parámetros de entrada, visualización de estados y backend con entrelazamiento y medidas.",
+    demo: "https://teleportation-project.onrender.com/",
+    code: "https://github.com/MariaAlejandraBoadaRodriguez/teleportation_project",
+  },
+];
 
 export default function Projects() {
-    return (
-        <Section id="proyectos" title="Proyectos">
-            <div className="grid md:grid-cols-2 gap-6">
-                <Card className="p-6">
-                    <div className="flex items-center justify-between">
-                        <h3 className="text-xl font-semibold">Quantum Portfolio Optimization</h3>
-                        <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">QUBO</span>
-                    </div>
-                    <p className="mt-3 text-slate-700">
-                        Plataforma de optimización de cartera con formulación QUBO para balancear retorno‑riesgo. Preselección por Sharpe,
-                        alto retorno, baja volatilidad/correlación. Solver de recocido simulado e integración cuántica (PennyLane/QAOA).
-                    </p>
-                    <div className="mt-4 flex flex-wrap gap-3">
-                        <LinkBadge href="https://investmen-portafolio.vercel.app/">Ver demo</LinkBadge>
-                        <LinkBadge href="https://github.com/MariaAlejandraBoadaRodriguez/investmen-portafolio">Código</LinkBadge>
-                    </div>
-                </Card>
-                <Card className="p-6">
-                    <div className="flex items-center justify-between">
-                        <h3 className="text-xl font-semibold">Teleportation (Flask + PennyLane)</h3>
-                        <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">VQA</span>
-                    </div>
-                    <p className="mt-3 text-slate-700">
-                        Plataforma web para simular teletransportación cuántica: parámetros de entrada, visualización de estados y backend
-                        con entrelazamiento y medidas.
-                    </p>
-                    <div className="mt-4 flex flex-wrap gap-3">
-                        <LinkBadge href="https://teleportation-project.onrender.com/">Ver demo</LinkBadge>
-                        <LinkBadge href="https://github.com/MariaAlejandraBoadaRodriguez/teleportation_project">Código</LinkBadge>
-                    </div>
-                </Card>
+  return (
+    <Section id="proyectos" title="Proyectos">
+      <div className="projects">
+        {projects.map((p) => (
+          <article key={p.title} className="project-card">
+            {/* Media arriba */}
+            <div className="project-card__media">
+              <img src={p.image} alt={p.title} loading="lazy" />
+              <span
+                className={`project-card__tag ${
+                  p.tag.toLowerCase() === "qubo" ? "is-qubo" : "is-vqa"
+                }`}
+              >
+                {p.tag}
+              </span>
             </div>
-        </Section>
-    );
+
+            {/* Contenido abajo */}
+            <div className="project-card__body">
+              <h3 className="project-card__title">{p.title}</h3>
+              <p className="project-card__desc">{p.desc}</p>
+
+              <div className="project-card__actions">
+                <a
+                  className="btn btn--ghost"
+                  href={p.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver demo
+                </a>
+                <a
+                  className="btn btn--ghost"
+                  href={p.code}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Código
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </Section>
+  );
 }

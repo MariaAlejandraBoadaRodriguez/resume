@@ -1,18 +1,12 @@
 /* ====== Layout general ====== */
 .landing-hero {
-  --text: #0f172a;       /* slate-900 */
-  --muted: #475569;      /* slate-600 */
-  --accent: #111827;     /* negro acento */
-  --circle: #f6c342;     /* amarillo como en la referencia */
-  --bg-dot: #e5e7eb;     /* lineas/nodos sutiles */
-  background:
-    radial-gradient(circle at 25% 15%, rgba(2, 132, 199, 0.03), transparent 40%),
-    radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.04), transparent 45%),
-    radial-gradient(var(--bg-dot) 1px, transparent 1px);
-  background-size: auto, auto, 24px 24px;
-  color: var(--text);
+  min-block-size: calc(100svh - var(--nav-h));
+  display: grid;
+  align-items: center;
 }
-
+@supports not (height: 100svh) {
+  .landing-hero { min-block-size: calc(100vh - var(--nav-h)); }
+}
 .landing-hero__container {
   max-width: 1152px; /* ~max-w-6xl */
   margin: 0 auto;

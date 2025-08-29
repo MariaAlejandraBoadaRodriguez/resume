@@ -1,0 +1,35 @@
+:root {
+  /* Ajusta si cambias la altura del navbar */
+  --nav-h: 72px;
+}
+
+/* Contenedor base */
+.section {
+  max-width: 1152px;               /* ~max-w-6xl */
+  margin-inline: auto;
+  padding-inline: 1rem;            /* px-4 */
+  padding-block: clamp(24px, 5vh, 64px);
+  color: #0f172a;                  /* slate-900 */
+  scroll-margin-top: calc(var(--nav-h) + 12px);
+}
+
+/* FULL viewport: usa svh (seguro en móvil) con fallback a vh */
+.section--full {
+  min-block-size: calc(100svh - var(--nav-h));
+  display: grid;
+  align-items: center;
+}
+@supports not (height: 100svh) {
+  .section--full {
+    min-block-size: calc(100vh - var(--nav-h));
+  }
+}
+
+/* Cabecera de sección */
+.section__head { margin-bottom: clamp(20px, 4vh, 36px); }
+.section__title { font: 800 clamp(28px, 4vw, 40px)/1.15 system-ui, sans-serif; }
+.section__subtitle { color: #475569; margin-top: .25rem; }
+.section__bar { display:block; width: 96px; height: 4px; margin-top: .6rem; border-radius: 9999px; background:#2563eb; }
+
+/* Scroll snap opcional */
+.section--snap { scroll-snap-align: start; }

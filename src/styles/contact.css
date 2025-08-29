@@ -1,0 +1,18 @@
+.contact .section__head { text-align: left; }
+
+.contact-card { padding: 1.5rem; }
+.contact-card__row {
+  display: flex; gap: 1rem; align-items: center; justify-content: space-between;
+  flex-wrap: wrap;
+}
+.contact-card__title { font: 700 1.25rem/1.2 system-ui, sans-serif; margin: 0; }
+.contact-card__text { margin-top: .25rem; color: #334155; }
+
+.contact-card__actions { display: flex; gap: .6rem; flex-wrap: wrap; }
+
+/* botón básico */
+.btn-outline {
+  border: 1px solid #e5e7eb; padding: .75rem 1.25rem; border-radius: 9999px;
+  text-decoration: none; color: #0f172a;
+}
+.btn-outline:hover { box-shadow: 0 6px 18px rgba(15,23,42,.08); }

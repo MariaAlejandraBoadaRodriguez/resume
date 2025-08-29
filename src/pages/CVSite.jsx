@@ -15,7 +15,7 @@ import FloatingWhatsApp from "../components/FloatingWhatsApp";
 
 export default function CVSite() {
   return (
-    <div className="min-h-screen w-full scroll-smooth bg-gradient-to-b from-slate-50 to-white text-slate-900">
+    <div className="page page--snap min-h-screen w-full scroll-smooth bg-gradient-to-b from-slate-50 to-white text-slate-900">
       <NavBar />
       <LandingHero />
       <RadialAboutSkills />
