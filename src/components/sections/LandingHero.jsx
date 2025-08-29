@@ -25,7 +25,7 @@ export default function LandingHero() {
 
             <a
               className="social-btn"
-              href="https://www.linkedin.com/in/mar%C3%ADa-alejandra-boada-rodriguez/"
+              href="https://www.instagram.com/invites/contact/?igsh=1jo940jfn4ds&utm_content=xyx4yu5"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
