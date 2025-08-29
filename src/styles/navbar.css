@@ -26,7 +26,7 @@
 .navbar__links {
   display: none;
   align-items: center;
-  gap: 4.5rem;             /* gap-6 */
+  gap: 3.5rem;             /* gap-6 */
   font-size: 0.95rem;      /* text-sm */
 }
 

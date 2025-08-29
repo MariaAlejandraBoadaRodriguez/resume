@@ -1,18 +1,57 @@
-.edu__grid {
-  display: grid; gap: 1.5rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-@media (max-width: 980px) {
-  .edu__grid { grid-template-columns: 1fr; }
+/* Paleta y tipografía coherente con el resto */
+:root{
+  --edu-text: #0f172a;   /* slate-900 */
+  --edu-muted:#475569;   /* slate-600 */
+  --edu-sep:  #e5e7eb;   /* slate-200 */
 }
 
-.edu-card { padding: 1.5rem; }
-.edu-card__title { font: 700 1.125rem/1.2 system-ui, sans-serif; margin: 0 0 .5rem; }
-
-.edu-list {
-  list-style: none; padding-left: 0;
-  display: flex; flex-direction: column; gap: .5rem;
-  color: #334155;
+/* Fila horizontal con separadores verticales entre columnas */
+.edu-row{
+  display: flex;
+  align-items: stretch;
+  gap: 0;                 /* el separador marca el ritmo */
+  margin: .75rem 0 0;
+  padding: 0;
+  list-style: none;
 }
-.edu-item { line-height: 1.6; }
-.edu-sep { margin: 0 .5rem; color: #94a3b8; }
+
+.edu-col{
+  flex: 1 1 0;
+  padding: .5rem 1rem;
+}
+
+/* Línea vertical entre elementos (excepto el primero) */
+.edu-col + .edu-col{
+  border-left: 1px solid var(--edu-sep);
+}
+
+/* Tipos de texto */
+.edu-title{
+  margin: 0 0 .25rem;
+  font-weight: 800;
+  color: var(--edu-text);
+}
+.edu-sub{
+  margin: 0;
+  color: var(--edu-muted);
+}
+.edu-date{
+  margin: .15rem 0 0;
+  font-weight: 600;
+  color: var(--edu-muted);
+}
+
+/* Responsivo: columnas apiladas con separador horizontal */
+@media (max-width: 900px){
+  .edu-row{
+    flex-direction: column;
+    gap: .5rem;
+  }
+  .edu-col{
+    padding: .75rem 0;
+  }
+  .edu-col + .edu-col{
+    border-left: 0;
+    border-top: 1px solid var(--edu-sep);
+  }
+}

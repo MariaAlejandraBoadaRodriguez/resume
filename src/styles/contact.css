@@ -1,18 +1,67 @@
-.contact .section__head { text-align: left; }
-
-.contact-card { padding: 1.5rem; }
-.contact-card__row {
-  display: flex; gap: 1rem; align-items: center; justify-content: space-between;
-  flex-wrap: wrap;
+/* Sección con fondo gris claro y formulario centrado */
+.contact {
+  min-block-size: calc(100svh - var(--nav-h, 72px));
+  display: grid;
+  place-items: start center;
+  background: #f6f6f6;
+  padding: clamp(24px, 6vw, 56px);
 }
-.contact-card__title { font: 700 1.25rem/1.2 system-ui, sans-serif; margin: 0; }
-.contact-card__text { margin-top: .25rem; color: #334155; }
 
-.contact-card__actions { display: flex; gap: .6rem; flex-wrap: wrap; }
-
-/* botón básico */
-.btn-outline {
-  border: 1px solid #e5e7eb; padding: .75rem 1.25rem; border-radius: 9999px;
-  text-decoration: none; color: #0f172a;
+.contact__form {
+  width: min(920px, 100%);
 }
-.btn-outline:hover { box-shadow: 0 6px 18px rgba(15,23,42,.08); }
+
+/* Fila con Name y Email lado a lado en desktop */
+.contact__form .row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+@media (min-width: 760px) {
+  .contact__form .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Inputs y textarea */
+.contact__form input,
+.contact__form textarea {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 3px;
+  padding: 12px 14px;
+  font-size: 16px;
+  background: #fff;
+  color: #0f172a;
+  outline: none;
+}
+.contact__form input::placeholder,
+.contact__form textarea::placeholder {
+  color: #94a3b8;
+}
+.contact__form > input { margin-bottom: 16px; }
+.contact__form textarea {
+  min-height: 240px;
+  resize: vertical;
+  margin-bottom: 16px;
+}
+
+/* Botón negro SEND */
+.contact .btn {
+  display: inline-block;
+  background: #1f2937;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: .5px;
+  padding: 16px 28px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+.contact .btn:disabled { opacity: .6; cursor: not-allowed; }
+
+/* Mensajes de estado */
+.msg { margin-top: 12px; font-size: 14px; }
+.msg.ok { color: #15803d; }
+.msg.error { color: #dc2626; }
