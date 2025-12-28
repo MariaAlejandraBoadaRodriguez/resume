@@ -117,7 +117,7 @@ export default function Contact() {
   // --- FIN CAMBIOS MENSAJE ---
 
   return (
-    <Section id="contacto" title="contact" subtitle="¡Let's talk!" className="contact">
+    <Section id="contacto" title="Contact" subtitle="¡Let's talk!" className="contact">
       <form
         className="contact__form"
         action="https://formsubmit.co/mboadarodriguez7@gmail.com"
