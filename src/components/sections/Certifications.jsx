@@ -5,7 +5,7 @@ import "../../styles/certifications.css";
 
 export default function Certifications() {
   return (
-    <Section id="certificaciones" title="Certificaciones" className="certs">
+    <Section id="certificaciones" title="Certifications" className="certs">
       <div className="certs__grid">
         <Card className="cert-card">
           <h3 className="cert-card__title">CISCO – Introduction to Cybersecurity (2023)</h3>

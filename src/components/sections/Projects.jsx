@@ -28,7 +28,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <Section id="proyectos" title="Proyectos">
+    <Section id="proyectos" title="Projects">
       <div className="projects">
         {projects.map((p) => (
           <article key={p.title} className="project-card">

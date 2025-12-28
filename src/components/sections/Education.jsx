@@ -60,7 +60,7 @@ const Row = ({ items }) => (
 
 export default function Education() {
   return (
-    <Section id="educacion" title="Educación">
+    <Section id="educacion" title="Education">
       <div className="grid md:grid-cols-2 gap-6">
         <Card className="p-6">
           <h3 className="text-lg font-semibold">Main training</h3>
