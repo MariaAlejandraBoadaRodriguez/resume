@@ -51,17 +51,17 @@ export default function RadialAboutSkills() {
         <div className="radial__left">
           <div className="about">
             <p className="about__p">
-              Soy desarrolladora <strong>full-stack</strong> con base en
-              psicología e ingeniería de software y actualmente curso una
-              <strong> Maestría en Ciberseguridad y Ciberdefensa</strong>. Me
-              especializo en construir productos de extremo a extremo que
-              combinan <strong>optimización</strong>, <strong>seguridad</strong>{" "}
-              y <strong>computación cuántica</strong>; disfruto transformar
-              requisitos complejos en interfaces claras y resultados
-              reproducibles listos para producción. Cuento con bases sólidas en
-              <strong> álgebra lineal</strong>, <strong>probabilidad</strong> y
-              <strong> programación</strong> aplicadas a información y
-              criptografía cuántica.
+              I am a <strong>full-stack</strong> developer with a background in
+              psychology and software engineering, and I am currently pursuing a
+              <strong> Master’s degree in Data Analytics </strong> and
+              <strong> Master's degree in Cybersecurity and Cyberdefense </strong>.
+              I specialize in <strong> optimization</strong>, <strong> security</strong>, 
+              <strong> Software Testing</strong>, <strong> Cloud & DevOps</strong> and
+              <strong> quantum computing</strong>; I enjoy transforming complex 
+              requirements into clear interfaces and reproducible, production-ready results. 
+              I have a strong foundation in <strong> linear algebra</strong>,
+              <strong> probability</strong> and <strong> programming </strong> 
+              applied to information and quantum cryptography.
             </p>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function RadialAboutSkills() {
 
             {/* Lenguajes (amarillo) */}
             <div className="skillbars__group">
-              <h4 className="skillbars__groupTitle">Lenguajes</h4>
+              <h4 className="skillbars__groupTitle">Programming languages</h4>
               {LANGUAGES.map((s) => (
                 <SkillBar key={s.label} {...s} variant="yellow" />
               ))}
@@ -82,7 +82,7 @@ export default function RadialAboutSkills() {
             {/* Frameworks y BD (negro) */}
             <div className="skillbars__group">
               <h4 className="skillbars__groupTitle">
-                Frameworks y Base de Datos
+                Frameworks & Data Base
               </h4>
               {FRAMEWORKS_DB.map((s) => (
                 <SkillBar key={s.label} {...s} variant="black" />
@@ -91,7 +91,7 @@ export default function RadialAboutSkills() {
 
             {/* Herramientas (amarillo) */}
             <div className="skillbars__group">
-              <h4 className="skillbars__groupTitle">Herramientas</h4>
+              <h4 className="skillbars__groupTitle">Tools</h4>
               {TOOLS.map((s) => (
                 <SkillBar key={s.label} {...s} variant="yellow" />
               ))}

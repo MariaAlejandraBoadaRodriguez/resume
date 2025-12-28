@@ -117,10 +117,10 @@ export default function Contact() {
   // --- FIN CAMBIOS MENSAJE ---
 
   return (
-    <Section id="contacto" title="Contacto" subtitle="¡Hablemos!" className="contact">
+    <Section id="contacto" title="contact" subtitle="¡Let's talk!" className="contact">
       <form
         className="contact__form"
-        action="https://formsubmit.co/mariaalejandraboadarodriguez@gmail.com"
+        action="https://formsubmit.co/mboadarodriguez7@gmail.com"
         method="POST"
       >
         {/* Config FormSubmit */}
@@ -146,7 +146,7 @@ export default function Contact() {
       {showToast && (
         <div className="confetti-overlay" role="status" aria-live="polite">
           <canvas ref={canvasRef} className="confetti-canvas" />
-          <div className="toast toast--ok">¡Gracias! Tu mensaje fue enviado correctamente.</div>
+          <div className="toast toast--ok">Thank you! Your message was sent successfully.</div>
         </div>
       )}
     </Section>

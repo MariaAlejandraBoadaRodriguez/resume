@@ -11,13 +11,13 @@ export default function LandingHero() {
         {/* Columna izquierda */}
         <div className="landing-hero__left">
           <h1 className="landing-hero__title">
-            Hola, <br />
-            <span className="landing-hero__im">soy</span>{" "}
+            Hello, <br />
+            <span className="landing-hero__im">I'm</span>{" "}
             <span className="landing-hero__name">María Alejandra Boada</span>
           </h1>
 
           <p className="landing-hero__subtitle">
-            Full-Stack Developer · Ciberseguridad · Computación Cuántica
+            Full-Stack Developer · Cybersecurity  · Quantum Computing
           </p>
 
           {/* Socials */}

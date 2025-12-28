@@ -11,7 +11,7 @@ const projects = [
     tag: "QUBO",
     image: quboImg,
     desc:
-      "Plataforma de optimización de cartera con formulación QUBO para balancear retorno-riesgo. Preselección por Sharpe, alto retorno, baja volatilidad/correlación. Solver de recocido simulado e integración cuántica (PennyLane/QAOA).",
+      "Portfolio optimization platform with QUBO formulation to balance return and risk. Sharpe preselection, high return, low volatility/correlation. Simulated annealing solver and quantum integration (Penny Lane/QAOA).",
     demo: "https://investmen-portafolio.vercel.app/",
     code: "https://github.com/MariaAlejandraBoadaRodriguez/investmen-portafolio",
   },
@@ -20,7 +20,7 @@ const projects = [
     tag: "VQA",
     image: teleImg,
     desc:
-      "Plataforma web para simular teletransportación cuántica: parámetros de entrada, visualización de estados y backend con entrelazamiento y medidas.",
+      "Web platform for simulating quantum teleportation: input parameters, state visualization, and backend with entanglement and measurements.",
     demo: "https://teleportation-project.onrender.com/",
     code: "https://github.com/MariaAlejandraBoadaRodriguez/teleportation_project",
   },
@@ -56,7 +56,7 @@ export default function Projects() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Ver demo
+                  Demo
                 </a>
                 <a
                   className="btn btn--ghost"
@@ -64,7 +64,7 @@ export default function Projects() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Código
+                  Code
                 </a>
               </div>
             </div>

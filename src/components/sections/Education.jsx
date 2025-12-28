@@ -6,36 +6,41 @@ import "../../styles/education.css";
 /** Formación principal */
 const PRINCIPAL = [
   {
-    title: "Psicología",
+    title: "Psychology",
     org: "Corporación Universitaria Minuto de Dios",
     date: "2011 – 2015",
   },
   {
-    title: "Ingeniería de Software",
+    title: "Software Engineering",
     org: "Universidad Iberoamericana",
-    date: "2022 – Presente",
+    date: "2022 – 2026",
   },
   {
-    title: "Maestría en Ciberseguridad y Ciberdefensa",
+    title: "Master's in Cybersecurity",
     org: "Escuela Superior de Guerra",
-    date: "2024 – Presente",
+    date: "2024 – 2026",
+  },
+  {
+    title: "Master’s in Data Analytics",
+    org: "University of Niagara Falls (UNF)",
+    date: "2025 – 2027",
   },
 ];
 
 /** Cursos destacados */
 const COURSES = [
   {
-    title: "Criptografía Poscuántica",
+    title: "Post-Quantum Cryptography",
     org: "Universidad de los Andes",
     date: "2024",
   },
   {
-    title: "Introducción a la Computación Cuántica",
+    title: "Introduction to Quantum Computing",
     org: "Universidad de los Andes",
     date: "2024",
   },
   {
-    title: "Técnico en Programación de Software",
+    title: "Software Programming Technician",
     org: "SENA",
     date: "2020 – 2023",
   },
@@ -58,12 +63,12 @@ export default function Education() {
     <Section id="educacion" title="Educación">
       <div className="grid md:grid-cols-2 gap-6">
         <Card className="p-6">
-          <h3 className="text-lg font-semibold">Formación principal</h3>
+          <h3 className="text-lg font-semibold">Main training</h3>
           <Row items={PRINCIPAL} />
         </Card>
 
         <Card className="p-6">
-          <h3 className="text-lg font-semibold">Cursos destacados</h3>
+          <h3 className="text-lg font-semibold">Featured Courses</h3>
           <Row items={COURSES} />
         </Card>
       </div>

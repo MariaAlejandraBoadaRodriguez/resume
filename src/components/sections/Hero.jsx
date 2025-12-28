@@ -20,12 +20,13 @@ export default function Hero() {
                 <Card className="p-6">
                     <div className="aspect-[4/3] w-full rounded-xl bg-gradient-to-br from-blue-500/10 to-emerald-500/10 p-6">
                         <p className="text-slate-700 text-base leading-relaxed">
-                            Soy desarrolladora <strong>full-stack</strong> con base en psicología e ingeniería de software
-                            y actualmente curso una <strong>Maestría en Ciberseguridad y Ciberdefensa</strong>. Me especializo en
-                            construir productos de extremo a extremo que combinan <strong>optimización</strong>, <strong>seguridad</strong>
-                            y <strong>computación cuántica</strong>; disfruto transformar requisitos complejos en interfaces claras y
-                            resultados reproducibles listos para producción. Cuento con bases sólidas en <strong>álgebra lineal</strong>,
-                            <strong> probabilidad</strong> y <strong>programación</strong> aplicadas a información y criptografía cuántica.
+                            I am a <strong>full-stack</strong> developer with a background in psychology and software engineering,
+                            and I am currently pursuing a <strong>Master's degree in Cybersecurity and Cyberdefense</strong> and a 
+                            <strong>Master’s degree in Data Analytics</strong>. I specialize in <strong>optimization</strong>, 
+                            <strong>security</strong>, <strong>Software Testing</strong>, <strong>Cloud & DevOps</strong> and
+                            <strong>quantum computing</strong>; I enjoy transforming complex requirements into clear interfaces and
+                            production-ready, reproducible results. I have a strong foundation in <strong>linear algebra</strong>,
+                            <strong> probability</strong> and <strong>programming</strong> applied to information and quantum cryptography.
                         </p>
 
                         <p className="mt-3 text-slate-700 text-base leading-relaxed">
