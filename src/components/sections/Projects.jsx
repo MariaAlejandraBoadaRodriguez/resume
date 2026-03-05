@@ -4,7 +4,7 @@ import "../../styles/projects.css";
 
 import quboImg from "../../images/QUBO.png";
 import teleImg from "../../images/Teleporta.png";
-import MarketlensImg from "../../images/MarketLens.png";
+import MarketlensImg from "../../images/marketlens.png";
 
 const projects = [
   {
