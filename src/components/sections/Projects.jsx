@@ -4,8 +4,18 @@ import "../../styles/projects.css";
 
 import quboImg from "../../images/QUBO.png";
 import teleImg from "../../images/Teleporta.png";
+import MarketlensImg from "../../images/MarketLens.png";
 
 const projects = [
+  {
+    title: "MarketLens Analytics",
+    tag: "SEO / SEM Analytics",
+    image: MarketlensImg,
+    desc:
+      "Portfolio optimization platform with QUBO formulation to balance return and risk. Sharpe preselection, high return, low volatility/correlation. Simulated annealing solver and quantum integration (Penny Lane/QAOA).",
+    demo: "https://marketlens-analytics.vercel.app/",
+    code: "https://github.com/MariaAlejandraBoadaRodriguez/marketLens_analytics.git",
+  },
   {
     title: "Quantum Portfolio Optimization",
     tag: "QUBO",
