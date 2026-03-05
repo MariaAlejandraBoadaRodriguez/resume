@@ -10,9 +10,10 @@ const projects = [
   {
     title: "MarketLens Analytics",
     tag: "SEO / SEM Analytics",
+    tag: "Data Analytics / Marketing Intelligence",
     image: MarketlensImg,
     desc:
-      "Portfolio optimization platform with QUBO formulation to balance return and risk. Sharpe preselection, high return, low volatility/correlation. Simulated annealing solver and quantum integration (Penny Lane/QAOA).",
+      "SEO and SEM analytics platform for website auditing, keyword opportunity discovery, campaign simulation, and KPI monitoring (CTR, CPC, CPA, ROAS) through interactive data dashboards.",
     demo: "https://marketlens-analytics.vercel.app/",
     code: "https://github.com/MariaAlejandraBoadaRodriguez/marketLens_analytics.git",
   },
